@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+      <property name="maximumPoolSize" value="100" />
+      <property name="minimumPoolSize" value="50" />
+      <property name="dataSourceClassName"
+                value="com.pivotal.gemfirexd.internal.jdbc.ClientDataSource" />
+      <property name="dataSourceProperties" ref="props" />
+      <property name="poolName" value="springHikariCP" />
+    </bean>
+
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+          <constructor-arg ref="hikariConfig" />
+    </bean>
+
+    <util:properties id="props" location="classpath:datasource.properties"/>
+
+</beans>
