@@ -3,19 +3,19 @@ GemFireXD-PerformanceTest
 
 Run as follows
 
-1. Create a local repo for GemFireXD client jar as shown below. 
+-> Create a local repo for GemFireXD client jar as shown below. 
 
 > mvn install:install-file -Dfile=/Users/papicella/gfxd/PRTS-1.0.0-14/Pivotal_GemFireXD_10_b45971/lib/gemfirexd-client.jar -DgroupId=com.gopivotal.gemfirexd -DartifactId=gemfirexd -Dversion=1.0.14 -Dpackaging=jar
 
-2. Edit src/main/resources/gemfirexdtest.properties to include what the insert / query tests will look like
+-> Edit src/main/resources/gemfirexdtest.properties to include what the insert / query tests will look like
 
-3. Edit src/main/resources/datasource.properties to include correct connect details to locator
+-> Edit src/main/resources/datasource.properties to include correct connect details to locator
  
-4. package as shown below
+-> package as shown below
 
 > mvn package
 
-5. Create table as follows
+-> Create table as follows
 
 > create table person
 (id int primary key,
@@ -23,7 +23,7 @@ Run as follows
 PARTITION BY COLUMN (id)
 REDUNDANCY 1; 
 
-6. Run as follows 
+-> Run as follows 
 
 > java -jar target/gemfirexd-performance.jar
 
