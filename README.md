@@ -57,6 +57,7 @@ $ java -jar target/gemfirexd-performance.jar
 - verify 100,000 person records created by getting a count of all records
 
 ```
+select count(*) from person;
 100000
 1 row selected
 ```
@@ -85,6 +86,24 @@ $ mvn package
 
 ```
 $ java -jar target/gemfirexd-performance.jar
+```
+
+- Verify output as follows which includes queries/updates to different records
+
+```
+.....
+Query with id 33372 took | 1 | milliseconds
+Update with id 22106 took | 2 | milliseconds
+Query with id 25178 took | 1 | milliseconds
+Update with id 52176 took | 2 | milliseconds
+Query with id 18122 took | 1 | milliseconds
+Query with id 40371 took | 1 | milliseconds
+Update with id 59235 took | 1 | milliseconds
+Query with id 59780 took | 1 | milliseconds
+Query with id 63849 took | 1 | milliseconds
+Query with id 49228 took | 1 | milliseconds
+Update with id 87876 took | 2 | milliseconds
+Elapsed time in seconds 1.448000
 ```
 
 GemFireXD PerformanceTest created by Pas Apicella papicella@pivotal.io
