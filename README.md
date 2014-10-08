@@ -39,28 +39,12 @@ password=app
 1. Edit src/main/resources/gemfirexdtest.properties to set your INSERT demo parameters as shown below.
 
 ```
-# INSERT TEST PROPERTIES
-
-# insert records to create
 records=100000
-#at what point do we call conn.commit() for each threads;
 commit_point=10000
-
-# QUERY TEST PROPERTIES
-
-# how many queries will each thread perform
 number_of_queries_per_thread=100
-
-# record range as per insert test , required to ensure we query/update an existing record ID
 start_of_record_range=1
 end_of_record_range=100000
-
-# PROPERTIES COMMON TO BOTH TESTS
-
-#number of threads for insert or query clients.
 nThreads=50
-
-# insert or query test, either : insert or query
 testType=insert
 ```
 
@@ -80,8 +64,7 @@ $ java -jar target/gemfirexd-performance.jar
 
 ```
 gfxd> select count(*) from person;
-1
------------
+
 100000
 
 1 row selected
@@ -92,28 +75,12 @@ gfxd> select count(*) from person;
 1. Edit src/main/resources/gemfirexdtest.properties to set your QUERY demo parameters as shown below
 
 ```
-# INSERT TEST PROPERTIES
-
-# insert records to create
 records=100000
-#at what point do we call conn.commit() for each threads;
 commit_point=10000
-
-# QUERY TEST PROPERTIES
-
-# how many queries will each thread perform
 number_of_queries_per_thread=100
-
-# record range as per insert test , required to ensure we query/update an existing record ID
 start_of_record_range=1
 end_of_record_range=100000
-
-# PROPERTIES COMMON TO BOTH TESTS
-
-#number of threads for insert or query clients.
 nThreads=50
-
-# insert or query test, either : insert or query
 testType=query
 ```
 
