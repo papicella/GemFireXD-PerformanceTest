@@ -28,7 +28,7 @@ user=app
 password=app
 ```
 
-<h2>INSERT Demo<h2>
+<h2>INSERT Demo</h2>
 
 - Edit src/main/resources/gemfirexdtest.properties to set your INSERT demo parameters as shown below.
 
