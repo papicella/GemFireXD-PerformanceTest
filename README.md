@@ -2,15 +2,15 @@
 
 Run as follows
 
-1. Clone as shown below.
+- Clone as shown below.
 
 ```
 git clone https://github.com/papicella/GemFireXD-PerformanceTest.git
 ```
 
-2. Move into the GemFireXD-PerformanceTest folder / directory
+- Move into the GemFireXD-PerformanceTest folder / directory
 
-3. Using gfxd CLI create a table for the demo as follows
+- Using gfxd CLI create a table for the demo as follows
 
 ```
 create table person
@@ -19,7 +19,7 @@ create table person
 PARTITION BY COLUMN (id)
 ```
 
-4. Edit src/main/resources/datasource.properties to ensure you have the correct connect details for your cluster
+- Edit src/main/resources/datasource.properties to ensure you have the correct connect details for your cluster
 
 ```
 portNumber=1527
@@ -30,7 +30,7 @@ password=app
 
 <h2>INSERT Demo<h2>
 
-1. Edit src/main/resources/gemfirexdtest.properties to set your INSERT demo parameters as shown below.
+- Edit src/main/resources/gemfirexdtest.properties to set your INSERT demo parameters as shown below.
 
 ```
 records=100000
@@ -42,31 +42,28 @@ nThreads=50
 testType=insert
 ```
 
-2. Package as follows
+- Package as follows
 
 ```
 $ mvn package
 ```
 
-3. Run as follows
+- Run as follows
 
 ```
 $ java -jar target/gemfirexd-performance.jar
 ```
 
-4. verify 100,000 person records created
+- verify 100,000 person records created by getting a count of all records
 
 ```
-select count(*) from person;
-
 100000
-
 1 row selected
 ```
 
 <h2>Query/Update Demo</h2>
 
-1. Edit src/main/resources/gemfirexdtest.properties to set your QUERY demo parameters as shown below
+- Edit src/main/resources/gemfirexdtest.properties to set your QUERY demo parameters as shown below
 
 ```
 records=100000
@@ -78,13 +75,13 @@ nThreads=50
 testType=query
 ```
 
-2. Package as follows
+- Package as follows
 
 ```
 $ mvn package
 ```
 
-3. Run as follows
+- Run as follows
 
 ```
 $ java -jar target/gemfirexd-performance.jar
